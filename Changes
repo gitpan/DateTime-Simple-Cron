@@ -1,0 +1,5 @@
+Revision history for Perl extension Data-Template.
+
+0.3    Fri Sep 29 2006
+        - full rewrite based only on POD
+

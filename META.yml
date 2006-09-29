@@ -1,0 +1,16 @@
+--- #YAML:1.0
+name:                DateTime-Simple-Cron
+version:             0.3
+abstract:            ~
+license:             perl
+generated_by:        ExtUtils::MakeMaker version 6.30_04
+author:              ~
+distribution_type:   module
+requires:     
+    DateTime:                      0
+    DateTime::Format::Strptime:    0
+    Set::Crontab:                  0
+    Test::More:                    0
+meta-spec:
+    url: http://module-build.sourceforge.net/META-spec-new.html
+    version: 1.1

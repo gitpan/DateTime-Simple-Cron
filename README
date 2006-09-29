@@ -1,0 +1,83 @@
+NAME
+    DateTime::Cron::Simple - Parse a cron entry and check against current
+    time
+
+SYNOPSIS
+      use DateTime::Cron::Simple;
+
+      $c = DateTime::Cron::Simple->new($cron);
+
+      $boolean = $c->validate_time;
+
+      $c->new_cron($cron);
+
+DESCRIPTION
+    ?
+
+    A cron entry (as implemented here) has five fields:
+
+        min hour day-of-month month day-of-week
+
+    Each may be
+
+       '*'
+       0-1
+       0-10/2
+       10,12
+       5
+
+       num: 5
+       range: 1-20  1-20/2
+       all: *
+
+       tok: num | range | all
+
+       entry: tok ,
+
+    valid
+
+       min: 0 - 59
+       hour: 0 - 12
+       day
+       month
+       dow
+
+  FUNCTIONS
+
+    new
+            $c = DateTime::Cron::Simple->new('0-59/2 10,12 * * 5');
+
+        Creates a cron entry.
+
+    new_cron
+            $c->new_cron($cron);
+
+        Updates the cron entry to the given argument.
+
+    validate
+            $boolean = $c->validate_time;
+            $boolean = $c->validate_time($dt);
+
+        Validates a datetime against the cron entry.
+
+AUTHORS/MAINTAINERS
+        The original author of this module is
+
+        Brendan Fagan <suburbanantihero (at) yahoo (dot) com>.
+
+        At version 0.3, a full rewrite was done to set it free from license
+        issues. The current maintainer is
+
+        Adriano Ferreira <ferreira (at) cpan (dot) org>.
+
+        Comments, bug reports, patches and flames are still appreciated.
+
+COPYRIGHT AND LICENSE
+        Brendan Fagan holds the copyright from 2004 to 2006 over versions
+        0.1 and 0.2 of the distribution.
+
+        Copyright (C) 2006 by A. R. Ferreira
+
+        This library is free software; you can redistribute it and/or modify
+        it under the same terms as Perl itself.
+
